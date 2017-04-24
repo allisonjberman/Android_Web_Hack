@@ -365,9 +365,9 @@ if (typeof NProgress != 'undefined') {
 		];
 		
 		var arr_data3 = [
-			[0, 1],
-			[1, 9],
-			[2, 6],
+			[0, 40],
+			[1, 2],
+			[2, 25],
 			[3, 10],
 			[4, 5],
 			[5, 17],
@@ -386,9 +386,11 @@ if (typeof NProgress != 'undefined') {
 		
 		var chart_plot_02_data = [];
 		
+
+		// this is used
 		var chart_plot_03_data = [
-			[0, 1],
-			[1, 9],
+			[0, 40],
+			[1, 2],
 			[2, 6],
 			[3, 10],
 			[4, 5],
@@ -2728,7 +2730,7 @@ if (typeof NProgress != 'undefined') {
 				  hideHover: 'auto',
 				  lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
 				  data: [
-					{year: '2012', value: 20},
+					{year: '2012', value: 15},
 					{year: '2013', value: 10},
 					{year: '2014', value: 5},
 					{year: '2015', value: 5},

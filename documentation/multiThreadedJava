@@ -1,0 +1,73 @@
+public class ThreadExample extends Thread{
+	static int x = 0;
+	static java.util.Random r = new java.util.Random();
+
+	public void run(){
+	if(r.nextBoolean()){
+		x++;
+	} else{
+		x--;
+	}
+	}
+
+	public static void main(String[] a){
+		new ThreadExample().start();
+		new ThreadExample().start();
+		assert -2 <= x && x <= 2;
+	}
+}
+
+// you need to test every TTT, TFT, TFF, xxx8
+
+////////////////////////////////////////////////
+
+public class RandomExample{
+	java.util.Random r = new java.util.Random(); // it's a class generator (could also call getInt())
+	
+
+	static void m(){
+		if(r.getBoolean()) return 0;
+		else return 1;
+	}
+
+	public static void main(String[] args){
+		System.out.println(m() == 1 ? "PASS" : "FAIL"); // we don't know if this test will pass or fail
+} 
+}
+
+////////////////////////////////////////////////
+
+public class RandomExample{
+	java.util.Random r = new java.util.Random(); // it's a class generator (could also call getInt())
+	
+
+	static void m(){
+		if(r.getBoolean()) return 0;
+		else return 1;
+	}
+
+	public static void main(String[] args){
+		//System.out.println(m() == 1 ? "PASS" : "FAIL"); // we don't know if this test will pass or fail
+		int result = m();
+		result += m();
+		result += m();
+		System.out.println(result != 3 ? "PASS" : "FAIL"); // it is possible for this test to fail (needs to retun FFF)
+} 
+}
+
+// non determinism: multithreaded, random value, datetime (flaky tests - pass at one point and fail at another)
+
+
+///////////////////////////////////////////////
+
+public class Example{
+	pulic static void man (String[] a){
+		Object o = new Object();
+		System.out.println(o); // prints out the address
+		System.out.println(System.identityHashCode(o)); // gives an approximation of the address. This address can //////change
+
+
+	}
+}
+
+// other sources of nodeterminism - if you iterate over a set the order is nondeterministic. The order can change. Same in HashMap, timezone.
