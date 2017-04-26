@@ -29,14 +29,13 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
    <script src="../js/morris.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-  <script src="../js/example.js"></script>
+  
   <!-- <link rel="stylesheet" href="../vendors/morris.js/examples/lib/example.css"> -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
    <link rel="stylesheet" href="../css/morris.css">
 
-    <!-- MORRIS -->  
-    <!--  AHSEN ADDED THE SCRIPT FOR A NEW INSTANCE-->
-    <!-- CPU Total Chart -->
+    
+    <!-- ============ CPU Total Chart ============= -->
 <script type="text/javascript">
   $(function () {
     var timestamp_data = [
@@ -64,9 +63,10 @@ Morris.Line({
 });
 });
   </script>
-<!-- CPU Total Chart -->
+<!-- ============ CPU Total Chart ============= -->
 
-<!-- CPU LOAD -->
+<!-- ============== CPU LOAD ================== -->
+<!-- ONLY NEED TO DISPLAY CURRENT DATA -->
 <script type="text/javascript">
   $(function () {
     var day_data = [
@@ -85,9 +85,9 @@ Morris.Bar({
   </script>
 
 
-<!-- CPU LOAD -->
+<!-- ============== CPU LOAD ================== -->
 
-<!-- RAM -->
+<!-- ============== RAM CHART ========== -->
 <script type="text/javascript">
   $(function () {
    
@@ -104,9 +104,8 @@ Morris.Donut({
   </script>
 
 
-<!-- RAM -->
+<!-- ============== RAM CHART ========== -->
 
-  <!--  AT THE END OF THE INSTANCE AHSEN WROTE-->
   </head>
 
   <body class="nav-md">
@@ -115,7 +114,7 @@ Morris.Donut({
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-android"></i> <span>Android Debug</span></a>
+              <a href="battery.html" class="site_title"><i class="fa fa-android"></i> <span>Android Debug</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -131,9 +130,9 @@ Morris.Donut({
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Statistics <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Battery</a></li>
-                      <li><a href="index2.html">CPU and RAM</a></li>
-                      
+                      <li><a href="battery.html">Battery</a></li>
+                      <li><a href="cpu.html">CPU and RAM</a></li>
+                      <li><a href="remote_testing.html">Run Tests</a></li>
                     </ul>
                   </li>
                   
@@ -179,6 +178,7 @@ Morris.Donut({
         <div class="right_col" role="main">
           <div class="">
             <!-- top tiles -->
+            <!-- ============== TOP BAR WITH BATTERY HEALTH, STATUS, LEVEL, TEMP, ETC... -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-heart"></i> Battery Health</span>
@@ -207,6 +207,7 @@ Morris.Donut({
               <div class="count">1.26GB</div>
             </div>
           </div>
+          <!-- ============== TOP BAR WITH BATTERY HEALTH, STATUS, LEVEL, TEMP, ETC... -->
           <!-- /top tiles -->
 
             <div class="row">
@@ -225,16 +226,19 @@ Morris.Donut({
                   <div class="x_content">
                     <div class="col-md-9 col-sm-12 col-xs-12">
                       <div class="demo-container" style="height:280px">
+                      <!-- ============ CPU Total Chart ============= -->
                         <div id="cpu_total" class="demo-placeholder"></div>
+                        <!-- ============ CPU Total Chart ============= -->
                       </div>
                       
 
                     </div>
-
+                    <!-- ============== CPU HOGS TABLE ========== -->
                     <div class="col-md-3 col-sm-12 col-xs-12">
                       <div>
                         <div class="x_title">
                           <h2>Top CPU Hogs</h2>
+                          
                           <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -298,7 +302,7 @@ Morris.Donut({
                         </ul>
                       </div>
                     </div>
-
+                      <!-- ============== CPU HOGS TABLE ========== -->
                   </div>
                 </div>
               </div>
@@ -323,8 +327,9 @@ Morris.Donut({
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
+                  <!-- ============== CPU LOAD ================== -->
                     <div id="cpu_load" style="width:100%; height:200px;"></div>
+                    <!-- ============== CPU LOAD ================== -->
                   </div>
                 </div>
 
@@ -349,9 +354,9 @@ Morris.Donut({
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  
+                  <!-- ============== RAM CHART ========== -->
                       <div id="RAM" style="width:100%; height:200px;"></div>  
-                      
+                  <!-- ============== RAM CHART ========== -->
                     
                 </div>
               </div>
@@ -360,7 +365,7 @@ Morris.Donut({
 
 
 
-
+              <!-- ============== RAM USED TABLE ========== -->
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
@@ -410,7 +415,7 @@ Morris.Donut({
                   </div>
                 </div>
               </div>
-
+              <!-- ============== RAM USED TABLE ========== -->
 
 
 

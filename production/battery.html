@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- TODO: make a table: test_id, test_name (bluetooth/wifi), test_status (pass/fail/pending), test_message -->
+<!-- tests: bluetooth, low battery test, battery status (discharing), speed test -->
+<!-- -->
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,14 +35,12 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
   <script src="../js/morris.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-  <script src="../js/example.js"></script>
+  
   <!-- <link rel="stylesheet" href="../vendors/morris.js/examples/lib/example.css"> -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
   <link rel="stylesheet" href="../css/morris.css">
 
-    <!-- MORRIS -->  
-    <!--  AHSEN ADDED THE SCRIPT FOR A NEW INSTANCE-->
-    <!-- Battery Level Chart -->
+    <!-- ======== Battery % Level Chart ========== -->
 <script type="text/javascript">
   $(function () {
     var timestamp_data = [
@@ -67,12 +68,12 @@ Morris.Line({
 });
 });
   </script>
-<!-- Battery Level Chart -->
-
-  <!--  AT THE END OF THE INSTANCE AHSEN WROTE-->
+<!-- ======== Battery % Level Chart ========== -->
 
 
-      <!-- temperature Chart -->
+
+
+<!-- ======== Temperature Chart ========== -->
 <script type="text/javascript">
   $(function () {
     var timestamp_data = [
@@ -100,7 +101,7 @@ Morris.Line({
 });
 });
   </script>
-<!-- temperature Chart -->
+<!-- ======== Temperature Chart ========== -->
 
 
   </head>
@@ -111,7 +112,7 @@ Morris.Line({
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-android"></i> <span>Android Debug</span></a>
+              <a href="battery.html" class="site_title"><i class="fa fa-android"></i> <span>Android Debug</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -127,8 +128,9 @@ Morris.Line({
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Statistics <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Battery</a></li>
-                      <li><a href="index2.html">CPU and RAM</a></li>
+                      <li><a href="battery.html">Battery</a></li>
+                      <li><a href="cpu.html">CPU and RAM</a></li>
+                      <li><a href="remote_testing.html">Run Tests</a></li>
                       
                     </ul>
                   </li>
@@ -165,7 +167,7 @@ Morris.Line({
         </div>
         <!-- /top navigation -->
 
-
+        <!-- ============== TOP BAR WITH BATTERY HEALTH, STATUS, LEVEL, TEMP, ETC... -->
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row tile_count">
@@ -196,6 +198,7 @@ Morris.Line({
               <div class="count">1.26GB</div>
             </div>
           </div>
+          <!-- ============== TOP BAR WITH BATTERY HEALTH, STATUS, LEVEL, TEMP, ETC... -->
           <!-- /top tiles -->
 
           <div class="row">
@@ -217,11 +220,11 @@ Morris.Line({
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
                   
-                <!-- BATTERY LEVEL -->
+                <!-- ========= BATTERY LEVEL CHART HERE ======== -->
                   <div id="battery_level" class="demo-placeholder"></div>
 
                   
-                  <!-- BATTERY LEVEL --> 
+                  <!-- ========= BATTERY LEVEL ========== --> 
                  
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-8 bg-white">
@@ -232,13 +235,14 @@ Morris.Line({
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-
+                <!--========= BATTERY STATUS METRIC ============= -->
                   <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="jumbotron">
                       <h3>Full</h3>
                      
                     </div>
                   </div>
+                   <!--========= BATTERY STATUS METRIC ============= -->
 
                 </div>
               </div>
@@ -271,14 +275,14 @@ Morris.Line({
                   
                   
                    
-
+                <!--========= BATTERY HEALTH METRIC ============= -->
                   <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="jumbotron">
                       <h3>Good</h3>
                      
                     </div>
                   </div>
-
+                  <!--========= BATTERY HEALTH METRIC ============= -->
 
                 
 
@@ -290,27 +294,6 @@ Morris.Line({
 
             
             <div class="col-md-8 col-sm-8 col-xs-12">
-               <!--   <div class="x_panel">
-                    <div class="x_title">
-                      <h2>Battery Temperature</h2>
-                      <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                      
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                     <div class="dashboard-widget-content">
-                            <div id="graph_bar" class="col-md-8 col-sm-12 col-xs-12" style="height:230px;""></div>
-                          
-                      </div>
-                      
-                      
-                    </div>
-                  </div> -->
                     <div class="x_panel">
                     <div class="x_title">
                       <h2>Battery Temperature&#8451 </h2>
@@ -347,7 +330,9 @@ Morris.Line({
                             </tbody>
                           </table>
                         </div>
+                        <!-- ======= TEMPERATURE CHART =========== -->
                         <div id="temperature" class="col-md-8 col-sm-12 col-xs-12" style="height:230px;"></div>
+                         <!-- ======= TEMPERATURE CHART =========== -->
                       </div>
                     </div>
                   </div>
